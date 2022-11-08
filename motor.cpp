@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<string.h>//y
 #include<stdlib.h>
-#include<math.h>
+#include<math.h>//
 #define PI 3.14159
 #define WIN_WIDTH 1366
 #define WIN_HEIGHT 768
@@ -727,7 +727,8 @@ void display_bike(void)
     draw_ground() ;
 
     glPushMatrix();
-    glTranslatef(xpos,0.0f,zpos);
+    glTranslatef(0.0,0.0,0.0); //ubah posisi objek
+    glTranslated(xpos,0.0f,zpos);
     glRotatef(direction,0.0f,1.0f,0.0f);
     drawFrame();
     drawChain();
@@ -736,7 +737,7 @@ void display_bike(void)
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(camx,camy,camz, camx,1.0,0.0,0.0,1.0,1.0); // pengaturan kamera
-    glutSwapBuffers(); // melakukan pertukaran buffer dari 1 jendela ke jendela lain
+    glutSwapBuffers(); // melakukan pertukaran buffer dari 1 jendela ke jendela lain // jalan hanya saja projek tidak jalan
 
 }
 
