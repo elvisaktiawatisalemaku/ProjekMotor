@@ -777,7 +777,7 @@ void reset() // RESETTING SCENE
     xpos=zpos=0.0f;
     direction=0.0f;
     glPushMatrix();
-    glColor3f(1.0f,10.5f,0.0f);
+    glColor3f(1.0f,10.5f,0.0f);//
     glRotatef(100.0,0.0,0.0,1.0);
     glTranslatef(-1.0,0.0,-0.6);
     XCylinder(GAS_TANK-0.1,2.7);
