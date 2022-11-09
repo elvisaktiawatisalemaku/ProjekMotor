@@ -176,7 +176,7 @@ void drawFrame()
     glRotatef(MIDDLE_ANGLE-RIGHT_ANGLE,0.0f,0.0f,1.0f);
     XCylinder(ROD_RADIUS,MIDDLE_ROD);
 
-    glColor3f(1.0f,1.0f,0.0f); //tidak tau
+    glColor3f(1.0f,0.0f,0.0f); //warna tempat duduk
     glTranslatef(MIDDLE_ROD,0.0f,0.0f);
     glRotatef(-MIDDLE_ANGLE,0.0f,0.0f,1.0f);
     glScalef(0.3f,ROD_RADIUS,0.25f);
@@ -719,7 +719,7 @@ void display_bike(void)
     lighting();
     shading();
     glPushMatrix();
-
+    glTranslatef(0.0,0.0,0.0); //ubah posisi objek
     glRotatef(angley,1.0f,0.0f,0.0f);
     glRotatef(anglex,0.0f,1.0f,0.0f);
     glRotatef(anglez,0.0f,0.0f,1.0f);
@@ -727,8 +727,8 @@ void display_bike(void)
     draw_ground() ;
 
     glPushMatrix();
-    glTranslatef(0.0,0.0,0.0); //ubah posisi objek
-    glTranslated(xpos,0.0f,zpos);
+
+    glTranslatef(xpos,0.0f,zpos);
     glRotatef(direction,0.0f,1.0f,0.0f);
     drawFrame();
     drawChain();
@@ -737,7 +737,7 @@ void display_bike(void)
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     gluLookAt(camx,camy,camz, camx,1.0,0.0,0.0,1.0,1.0); // pengaturan kamera
-    glutSwapBuffers(); // melakukan pertukaran buffer dari 1 jendela ke jendela lain // jalan hanya saja projek tidak jalan
+    glutSwapBuffers(); // melakukan pertukaran buffer dari 1 jendela ke jendela lain
 
 }
 
@@ -777,7 +777,7 @@ void reset() // RESETTING SCENE
     xpos=zpos=0.0f;
     direction=0.0f;
     glPushMatrix();
-    glColor3f(1.0f,1.0f,0.0f);
+    glColor3f(1.0f,10.5f,0.0f);
     glRotatef(100.0,0.0,0.0,1.0);
     glTranslatef(-1.0,0.0,-0.6);
     XCylinder(GAS_TANK-0.1,2.7);
